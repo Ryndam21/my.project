@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Handlee);
+
 body,
 html {
   margin: 0 !important; /* <--- Cukup tambahkan baris ini */
@@ -46,12 +49,8 @@ html {
   display: inline-block;
 }
 
-/* Paper */
-@import url(https://fonts.googleapis.com/css?family=Roboto);
-@import url(https://fonts.googleapis.com/css?family=Handlee);
-
 .paper {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Handlee', cursive, sans-serif;
   position: relative;
   width: 90%;
   max-width: 800px;
