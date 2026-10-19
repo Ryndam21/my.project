@@ -169,15 +169,10 @@ new TypeIt("#teks1", {
     "Bersamamu membuatku paham artinya bersyukur setiap hari.", 
     "Terima kasih atas setiap senyuman, kehangatan, dan kebaikan yang selalu kamu bagikan.", 
     "Semoga hal-hal yang membuatmu runtuh turut menjadi alasan buat kamu untuk tetap tumbuh.", 
-    "Semoga dunia senantiasa menjagamu dimana pun kamu berada.", 
-    "Semoga setiap hari kamu selalu diiringi oleh cinta yang tak pernah ada batasnya, dan setiap langkahmu dimudahkan hingga tercapai apa yang kamu inginkan.", 
-    "Diusiamu yang baru ini, ingat ya kalau kamu nggak pernah sendirian.", 
-    "Dalam setiap langkah, suka, maupun duka yang akan datang, aku akan selalu ada disini untuk menemani dan mendukungmu.", 
-    "Bahagia dan sehat selalu ya, sayangku.", 
-    "Happy Birthday Syifa Sayang"
+    "Semoga dunia senantiasa menjagamu dimana pun kamu berada.",   
   ],
   startDelay: 3000,
-  speed: 75,
+  speed: 50,
   waitUntilVisible: true
 }).go();
 
@@ -199,14 +194,17 @@ setTimeout(function() {
 // TypeIt Slide 2 (#teks2)
 new TypeIt("#teks2", {
   strings: [
+    "Semoga setiap hari kamu selalu diiringi oleh cinta yang tak pernah ada batasnya, dan setiap langkahmu dimudahkan hingga tercapai apa yang kamu inginkan.",
+    "Diusiamu yang baru ini, ingat ya kalau kamu nggak pernah sendirian.", 
+    "Dalam setiap langkah, suka, maupun duka yang akan datang, aku akan selalu ada disini untuk menemani dan mendukungmu.", 
+    "Bahagia dan sehat selalu ya, sayangku.",
     "Dengan ataupun tanpaku, semoga semesta selalu membahagiakan kamu bagaimanapun caranya.", 
-    " ", 
-    "Barakallah fi umrik cinta, terima kasih sayang sudah bertahan sampai sejauh ini.", 
+    "Barakallah fi umrik, terima kasih sayang sudah bertahan sampai sejauh ini.", 
     " ", 
     "- I Love You Syifa"
   ],
   startDelay: 2000,
-  speed: 75,
+  speed: 50,
   waitUntilVisible: true
 }).go();
 
