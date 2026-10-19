@@ -172,7 +172,7 @@ new TypeIt("#teks1", {
     "Semoga dunia senantiasa menjagamu dimana pun kamu berada.",   
   ],
   startDelay: 3000,
-  speed: 100,
+  speed: 90,
   waitUntilVisible: true
 }).go();
 
@@ -202,7 +202,7 @@ new TypeIt("#teks2", {
     "- I Love You Syifa"
   ],
   startDelay: 2000,
-  speed: 100,
+  speed: 90,
   waitUntilVisible: true
 }).go();
 
@@ -485,26 +485,37 @@ function nextPhotoStep() {
   const photoCard = document.getElementById('photo-card-wrapper');
   const photoImg = document.getElementById('current-memory-photo');
 
-  // Langkah 1: Saat amplop pertama kali diketuk
+  // Langkah 1: Saat amplop pertama kali diketuk (Transisi halus ke foto)
   if (currentPhotoIndex === -1) {
     if (envelopeWrapper) {
-      envelopeWrapper.style.transform = 'scale(1.1)';
+      // Efek amplop membesar dan memudar perlahan
+      envelopeWrapper.style.transition = 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+      envelopeWrapper.style.transform = 'scale(1.15)';
       envelopeWrapper.style.opacity = '0';
+      
+      // Tunggu sampai efek amplop pudar, baru tampilkan foto
       setTimeout(() => {
         envelopeWrapper.style.display = 'none';
-      }, 200);
+        
+        // Siapkan dan tampilkan container foto
+        photoContainer.style.display = 'flex';
+        currentPhotoIndex = 0;
+        photoImg.src = memoryPhotos[currentPhotoIndex];
+        
+        // Mulai dari skala kecil (efek keluar dari dalam amplop)
+        photoCard.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        photoCard.style.opacity = '0';
+        photoCard.style.transform = 'scale(0.5)';
+        
+        // Picu animasi kemunculan foto polaroid dengan efek spring/bounce lembut
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            photoCard.style.opacity = '1';
+            photoCard.style.transform = 'scale(1)';
+          }, 30);
+        });
+      }, 300); // Sinkron dengan durasi pudar amplop
     }
-    
-    photoContainer.style.display = 'flex';
-    currentPhotoIndex = 0;
-    
-    photoImg.src = memoryPhotos[currentPhotoIndex];
-    
-    // Munculkan foto pertama dengan transisi halus instan
-    requestAnimationFrame(() => {
-      photoCard.style.opacity = '1';
-      photoCard.style.transform = 'scale(1) rotate(0deg)';
-    });
     return;
   }
 
@@ -512,20 +523,17 @@ function nextPhotoStep() {
   currentPhotoIndex++;
 
   if (currentPhotoIndex < memoryPhotos.length) {
-    // Efek keluar cepat (Fade out & sedikit mengecil)
+    // Efek transisi antar foto
     photoCard.style.transform = 'scale(0.85)';
     photoCard.style.opacity = '0';
 
     setTimeout(() => {
-      // Ganti gambar di tengah jeda transisi
       photoImg.src = memoryPhotos[currentPhotoIndex];
-      
-      // Masuk kembali dengan mulus
-      photoCard.style.transform = 'scale(1) rotate(0deg)';
+      photoCard.style.transform = 'scale(1)';
       photoCard.style.opacity = '1';
-    }, 180); // Durasi dipercepat agar tidak ada kesan delay/kaku
+    }, 180);
   } else {
-    // Jika foto sudah habis, sembunyikan kartu dengan halus
+    // Jika foto sudah habis, sembunyikan kartu
     photoCard.style.transform = 'scale(0.8)';
     photoCard.style.opacity = '0';
   }
