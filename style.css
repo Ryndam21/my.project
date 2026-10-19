@@ -1,0 +1,304 @@
+body,
+html {
+  margin: 0 !important; /* <--- Cukup tambahkan baris ini */
+  padding: 0 !important;
+  height: 100%;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+}
+
+.bg {
+  /* Location of the image */
+  background-image: url(./img/background.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based
+      on the container's size */
+  background-size: cover;
+
+  /* Set a background color that will be displayed
+      while the background image is loading */
+  background-color: #FEC0CD;
+  height: 100%;
+}
+
+.img {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 20px;
+  margin-bottom: 30px;
+  width: 350px;
+}
+
+#tap {
+  display: inline-block;
+}
+
+.foto {
+  width: 80%;
+  max-width: 400px;
+  min-width: 300px;
+  margin-top: 100px;
+  display: inline-block;
+}
+
+/* Paper */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Handlee);
+
+.paper {
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  min-width: 300px;
+  height: 540px;
+  margin: 50px auto;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+  overflow: hidden;
+}
+
+.paper:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 5px;
+  width: 45px;
+  background: radial-gradient(#616161 6px, transparent 7px) repeat-y;
+  background-size: 30px 30px;
+  border-right: 3px solid #D44147;
+  box-sizing: border-box;
+}
+
+.paper-content {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  bottom: 30px;
+  left: 50px;
+  background: linear-gradient(transparent, transparent 28px, #91D1D3 28px);
+  background-size: 30px 30px;
+}
+
+.paper-content .teks {
+  text-align: left;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  line-height: 30px;
+  padding: 0 10px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #3f3f44;
+  font-family: 'Handlee', cursive;
+  font-size: 18px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.kotak {
+  position: relative;
+  width: 90%;
+  max-width: 550px;
+  min-width: 200px;
+  max-height: 350px;
+  min-height: 100px;
+  top: 300px;
+  padding: 20px 0;
+  display: inline-block;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+  overflow: hidden;
+}
+
+.btn {
+  border-radius: 40px;
+}
+
+#slideLima {
+  position: relative;
+  top: 300px;
+}
+
+#trims {
+  position: relative;
+  top: 300px;
+  display: inline-block;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+li {
+  display: inline-block;
+  font-size: 16px;
+  list-style-type: none;
+  position: relative;
+  left: -20px;
+  margin-top: 10px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+li span {
+  display: block;
+  font-size: 24px;
+}
+
+body {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.container {
+  color: #333;
+  position: relative;
+  top: 250px;
+  padding: 0;
+  text-align: center;
+}
+
+/* Styling untuk kelopak bunga emoji yang melayang halus dan natural */
+.sakura-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 99999;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -10vh;
+  font-size: 20px;
+  user-select: none;
+  /* Menggabungkan animasi jatuh ke bawah dan goyangan ke samping secara terpisah agar luwes */
+  animation: fallDown linear infinite, swayWind ease-in-out infinite;
+}
+
+@keyframes fallDown {
+  0% {
+    top: -10vh;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 105vh;
+    opacity: 0.2;
+  }
+}
+
+@keyframes swayWind {
+  0%, 100% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateX(45px) rotate(45deg);
+  }
+}
+
+/* Styling Amplop Putih Estetik & Realistis */
+/* Container Utama Amplop */
+.real-envelope {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 40px auto;
+  cursor: pointer;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, opacity 0.4s ease;
+  z-index: 99999;
+  overflow: visible;
+}
+
+.real-envelope:hover {
+  transform: scale(1.04);
+}
+
+/* Lipatan Bawah Amplop (Tiga Segitiga Kertas) */
+.envelope-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 140px solid #f2f2f2;
+  border-right: 140px solid #f2f2f2;
+  border-top: 90px solid transparent;
+  border-bottom: 90px solid #e6e6e6;
+  border-radius: 0 0 10px 10px;
+  z-index: 2;
+}
+
+/* Lidah Penutup Amplop Atas */
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-top: 100px solid #ffffff;
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.08));
+  transform-origin: top;
+  transition: transform 0.4s ease;
+  z-index: 3;
+}
+
+/* Segel Hati Tepat di Tengah Pertemuan Lidah Amplop */
+.heart-seal {
+  position: absolute;
+  top: 80px; /* Pas di pertemuan lidah amplop */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(212, 65, 71, 0.35));
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* Memaksa area halaman naik menutupi celah putih atas */
+body {
+  margin-top: -1px !important;
+}
+
+/* Memastikan kontainer slide foto dan galeri tidak mendorong ke bawah */
+#slideFoto {
+  position: fixed !important;
+  top: 40% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
