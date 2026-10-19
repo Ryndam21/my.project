@@ -24,7 +24,7 @@ const second = 1000,
   hour = minute * 60,
   day = hour * 24;
 
-let countDown = new Date('Oct 2, 2026 00:00:00').getTime(),
+let countDown = new Date('Oct 20, 2026 00:00:00').getTime(),
   x = setInterval(function () {
     let now = new Date().getTime(),
       distance = countDown - now;
@@ -172,7 +172,7 @@ new TypeIt("#teks1", {
     "Semoga dunia senantiasa menjagamu dimana pun kamu berada.",   
   ],
   startDelay: 3000,
-  speed: 25,
+  speed: 100,
   waitUntilVisible: true
 }).go();
 
@@ -199,11 +199,10 @@ new TypeIt("#teks2", {
     "Dalam setiap langkah, suka, maupun duka yang akan datang, aku akan selalu ada disini untuk menemani dan mendukungmu.", 
     "Dengan ataupun tanpaku, semoga semesta selalu membahagiakan kamu bagaimanapun caranya.", 
     "Barakallah fi umrik, terima kasih sayang sudah bertahan sampai sejauh ini.", 
-    " ", 
     "- I Love You Syifa"
   ],
   startDelay: 2000,
-  speed: 25,
+  speed: 100,
   waitUntilVisible: true
 }).go();
 
