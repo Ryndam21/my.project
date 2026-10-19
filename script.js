@@ -172,7 +172,7 @@ new TypeIt("#teks1", {
     "Semoga dunia senantiasa menjagamu dimana pun kamu berada.",   
   ],
   startDelay: 3000,
-  speed: 50,
+  speed: 25,
   waitUntilVisible: true
 }).go();
 
@@ -197,14 +197,13 @@ new TypeIt("#teks2", {
     "Semoga setiap hari kamu selalu diiringi oleh cinta yang tak pernah ada batasnya, dan setiap langkahmu dimudahkan hingga tercapai apa yang kamu inginkan.",
     "Diusiamu yang baru ini, ingat ya kalau kamu nggak pernah sendirian.", 
     "Dalam setiap langkah, suka, maupun duka yang akan datang, aku akan selalu ada disini untuk menemani dan mendukungmu.", 
-    "Bahagia dan sehat selalu ya, sayangku.",
     "Dengan ataupun tanpaku, semoga semesta selalu membahagiakan kamu bagaimanapun caranya.", 
     "Barakallah fi umrik, terima kasih sayang sudah bertahan sampai sejauh ini.", 
     " ", 
     "- I Love You Syifa"
   ],
   startDelay: 2000,
-  speed: 50,
+  speed: 25,
   waitUntilVisible: true
 }).go();
 
@@ -490,21 +489,23 @@ function nextPhotoStep() {
   // Langkah 1: Saat amplop pertama kali diketuk
   if (currentPhotoIndex === -1) {
     if (envelopeWrapper) {
-      envelopeWrapper.style.transform = 'scale(1.2) translateY(-30px)';
+      envelopeWrapper.style.transform = 'scale(1.1)';
       envelopeWrapper.style.opacity = '0';
       setTimeout(() => {
-        envelopeWrapper.style.display = 'none'; // Menghilangkan amplop sepenuhnya
-      }, 300);
+        envelopeWrapper.style.display = 'none';
+      }, 200);
     }
     
     photoContainer.style.display = 'flex';
     currentPhotoIndex = 0;
     
     photoImg.src = memoryPhotos[currentPhotoIndex];
-    setTimeout(() => {
+    
+    // Munculkan foto pertama dengan transisi halus instan
+    requestAnimationFrame(() => {
       photoCard.style.opacity = '1';
-      photoCard.style.transform = 'scale(1)';
-    }, 50);
+      photoCard.style.transform = 'scale(1) rotate(0deg)';
+    });
     return;
   }
 
@@ -512,16 +513,20 @@ function nextPhotoStep() {
   currentPhotoIndex++;
 
   if (currentPhotoIndex < memoryPhotos.length) {
-    photoCard.style.transform = 'scale(0.8) translateY(20px)';
+    // Efek keluar cepat (Fade out & sedikit mengecil)
+    photoCard.style.transform = 'scale(0.85)';
     photoCard.style.opacity = '0';
 
     setTimeout(() => {
+      // Ganti gambar di tengah jeda transisi
       photoImg.src = memoryPhotos[currentPhotoIndex];
-      photoCard.style.transform = 'scale(1) translateY(0)';
+      
+      // Masuk kembali dengan mulus
+      photoCard.style.transform = 'scale(1) rotate(0deg)';
       photoCard.style.opacity = '1';
-    }, 250);
+    }, 180); // Durasi dipercepat agar tidak ada kesan delay/kaku
   } else {
-    // Jika foto sudah habis, sembunyikan kartu
+    // Jika foto sudah habis, sembunyikan kartu dengan halus
     photoCard.style.transform = 'scale(0.8)';
     photoCard.style.opacity = '0';
   }
